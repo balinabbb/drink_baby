@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.balintbalina.myapplication.MainActivity"
+    style="@style/LayoutStyle">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/titleimage" />
+
+    <TextView
+        android:id="@+id/authorLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleView"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Készítette:"
+        android:gravity="center"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/authorNameLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/authorLabel"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Balina Bálint"
+        android:gravity="center"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/yearLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/authorNameLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Copyright © 2017"
+        android:gravity="center"
+        android:textSize="15sp"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Vissza"
+        android:id="@+id/backButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:onClick="BackClick"
+        android:layout_below="@id/yearLabel" />
+</RelativeLayout>

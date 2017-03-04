@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.balintbalina.myapplication.DrinkActivity"
+    style="@style/LayoutStyle">
+
+    <RelativeLayout android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/titleimage" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Elvárt"
+            android:id="@+id/expectedLabel"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/titleView"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:id="@+id/quatityLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/expectedLabel"
+            android:layout_centerHorizontal="true">
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/quantitytextbox"
+                android:layout_below="@+id/expectedLabel"
+                android:enabled="true"
+                android:maxLines="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColorHighlight="@color/colorAccent"
+                />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="dl minden"
+                android:id="@+id/allLabel"
+                android:layout_below="@id/expectedLabel"
+                android:layout_alignLeft="@id/quantitytextbox"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/timeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/quatityLayout"
+            android:layout_centerHorizontal="true">
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/timetextbox"
+                android:enabled="true"
+                android:maxLines="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColorHighlight="@color/colorAccent"
+                />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="óra alatt."
+                android:id="@+id/inTimeLabel"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Ok"
+            android:id="@+id/okButton"
+            android:layout_below="@id/timeLayout"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="okClick"
+            android:clickable="true" />
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Vissza"
+            android:id="@+id/backButton"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/okButton"
+            android:layout_marginTop="5dp"
+            android:onClick="backClick" />
+    </RelativeLayout>
+</ScrollView>

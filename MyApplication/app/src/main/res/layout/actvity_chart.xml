@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LayoutStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.balintbalina.myapplication.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/selectorButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/dayButton"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4"
+            android:text="Napi" />
+
+        <Button
+            android:id="@+id/weekButton"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4"
+            android:text="Heti" />
+
+        <Button
+            android:id="@+id/monthButton"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4"
+            android:text="Havi" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/backButton"
+        android:layout_below="@id/selectorButtons"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/oldLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Előző" />
+            <View
+                android:id="@+id/oldLine"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@id/oldLabel"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/colorDarkBlue"></View>
+            <TextView
+                android:id="@+id/oldValueLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_above="@id/oldLine"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="1L" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/prevLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Aktuális" />
+            <View
+                android:id="@+id/prevLine"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_above="@id/prevLabel"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/colorBlue"></View>
+            <TextView
+                android:id="@+id/prevValueLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_above="@id/prevLine"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="0.5L" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/currentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Aktuális" />
+            <View
+                android:id="@+id/currentLine"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_above="@id/currentLabel"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/colorLightBlue"></View>
+            <TextView
+                android:id="@+id/currentValueLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_above="@id/currentLine"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="0.25L" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/backButton"
+        style="@style/ButtonStyle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="BackClick"
+        android:text="Vissza" />
+</RelativeLayout>

@@ -28,4 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public void AboutClick(View view) {
         startActivity(new Intent(getApplicationContext(), AboutActivity.class));
     }
+
+    public void ChartClick(View view) {
+        startActivity(new Intent(getApplicationContext(), ChartActivity.class));
+    }
 }

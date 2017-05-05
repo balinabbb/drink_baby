@@ -15,11 +15,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".DrinkActivity" android:label="Ital bevitel" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
+
         <activity android:name=".NotificationSettingsActivity" android:label="Értesítések" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ChartActivity" android:label="Grafikon" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
         <activity android:name=".AboutActivity" android:label="Névjegy" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
         <activity android:name=".SettingsActivity" android:label="Beálltások" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
+
         <activity android:name=".MessageActivity" android:label="Üzenet" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
+
         <receiver android:name=".MessageReceiver" ></receiver>
     </application>
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

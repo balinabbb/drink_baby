@@ -17,23 +17,33 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/titleimage" />
+    <!--<Button-->
+        <!--style="@style/ButtonStyle"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Névjegy"-->
+        <!--android:id="@+id/aboutButton"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:onClick="AboutClick"/>-->
     <Button
         style="@style/ButtonStyle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Névjegy"
-        android:id="@+id/aboutButton"
+        android:text="Grafikon"
+        android:id="@+id/graphButton"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
-        android:onClick="AboutClick"/>
+        android:onClick="ChartClick"/>
     <Button
         style="@style/ButtonStyle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Beállítások"
         android:id="@+id/manageButton"
-        android:layout_above="@id/aboutButton"
+        android:layout_above="@id/graphButton"
         android:layout_centerHorizontal="true"
         android:onClick="SettingsClick"/>
     <Button

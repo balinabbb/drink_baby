@@ -31,22 +31,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void deleteDataClick(View view) {
-        Write("", MODE_PRIVATE);
+        DataManager.writeData("", this, MODE_PRIVATE);
+        DataManager.writeSettings(this, new String[0]);
         finish();
-    }
-
-    private void Write(String content, int mode)
-    {
-        FileOutputStream outputStream;
-
-        try {
-            outputStream = openFileOutput(DrinkActivity.FileName, mode);
-            outputStream.write(content.getBytes());
-            outputStream.flush();
-            outputStream.close();
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
     }
 }

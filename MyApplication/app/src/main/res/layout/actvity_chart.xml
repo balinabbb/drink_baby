@@ -23,7 +23,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="4"
-            android:text="Napi" />
+            android:text="Napi"
+            android:onClick="dailyClick"/>
 
         <Button
             android:id="@+id/weekButton"
@@ -33,7 +34,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="4"
-            android:text="Heti" />
+            android:text="Heti"
+            android:onClick="weeklyClick"/>
 
         <Button
             android:id="@+id/monthButton"
@@ -43,7 +45,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="4"
-            android:text="Havi" />
+            android:text="Havi"
+            android:onClick="monthlyClick"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,7 +67,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="Előző" />
+                android:text="Előző előtti" />
             <View
                 android:id="@+id/oldLine"
                 android:layout_width="match_parent"
@@ -94,7 +97,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="Aktuális" />
+                android:text="Előző" />
             <View
                 android:id="@+id/prevLine"
                 android:layout_width="match_parent"

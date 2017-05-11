@@ -29,7 +29,7 @@ public class NotificationSettingsActivity extends AppCompatActivity {
         timeTextbox = (EditText)findViewById(R.id.timetextbox);
 
         try {
-            List<String> data = read();
+            List<String> data = DataManager.read(this, DataManager.SETTINGS);
             amountTextbox.setText(data.get(0));
             timeTextbox.setText(data.get(1));
         }
@@ -44,12 +44,14 @@ public class NotificationSettingsActivity extends AppCompatActivity {
     public void okClick(View view) {
         if(amountTextbox.getText().toString().equals("") || timeTextbox.getText().toString().equals(""))
             return;
-        write();
-        setupNotificationTest();
-        //setupNotifications();
+        DataManager.writeSettings(this, new String[]{
+                amountTextbox.getText().toString(),
+                timeTextbox.getText().toString()
+        });
+        //setupNotificationTest();
+        setupNotifications();
         finish();
     }
-    public final static String Settings = "settings";
     private final static int start = 8;
     private final static int end = 20;
     EditText amountTextbox, timeTextbox;
@@ -59,6 +61,7 @@ public class NotificationSettingsActivity extends AppCompatActivity {
         int increment = Integer.parseInt(timeTextbox.getText().toString());
         Long currentSystemTime = System.currentTimeMillis();
         Long[] times = new Long[(end-start)/increment];
+        int index = 0;
         for (int i = start; i < end; i+=increment){
             Calendar cal = Calendar.getInstance();
             cal.set(Calendar.HOUR_OF_DAY, i);
@@ -68,7 +71,7 @@ public class NotificationSettingsActivity extends AppCompatActivity {
             if(calTime < currentSystemTime)
                 cal.add(Calendar.DAY_OF_YEAR, 1);
 
-            times[i] = cal.getTimeInMillis();
+            times[index++] = cal.getTimeInMillis();
         }
 
 
@@ -95,51 +98,7 @@ public class NotificationSettingsActivity extends AppCompatActivity {
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, intent, 0);
         am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 1 , pi);
     }
-    private void write()
-    {
-        FileOutputStream outputStream;
-        String content1 = amountTextbox.getText().toString();
-        String content2 = timeTextbox.getText().toString();
-        try {
-            outputStream = openFileOutput(Settings, MODE_PRIVATE);
-            outputStream.write(content1.getBytes());
-            outputStream.write("\n".getBytes());
-            outputStream.write(content2.getBytes());
-            outputStream.flush();
-            outputStream.close();
-        } catch (Exception e) {
 
-            e.printStackTrace();
-        }
-    }
-
-    private List<String> read(){
-        ArrayList<String> data = new ArrayList<>();
-
-
-        try {
-            InputStream input = this.openFileInput(Settings);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-            String line = null;
-
-            while((line = reader.readLine()) != null) {
-                data.add(line);
-            }
-
-            reader.close();
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '" +
-                            Settings + "'");
-        }
-        catch(IOException ex) {
-            System.out.println(
-                    "Error reading file '"
-                            + Settings + "'");
-        }
-        return data;
-    }
 
 
 

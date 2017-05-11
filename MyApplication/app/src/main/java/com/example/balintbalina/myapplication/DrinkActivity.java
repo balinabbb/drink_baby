@@ -6,13 +6,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.io.FileOutputStream;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DrinkActivity extends AppCompatActivity {
 
-    public static final String FileName = "data";
     private int _counter;
     private EditText _inputText;
     private TextView _hintLabel;
@@ -66,7 +64,7 @@ public class DrinkActivity extends AppCompatActivity {
         }
         Date date = Calendar.getInstance().getTime();
         String content = date + ";" + _inputText.getText() + "\r\n";
-        Write(content, MODE_APPEND);
+        DataManager.writeData(content, this, MODE_APPEND);
         finish();
     }
 
@@ -79,18 +77,5 @@ public class DrinkActivity extends AppCompatActivity {
         }
     }
 
-    private void Write(String content, int mode)
-    {
-        FileOutputStream outputStream;
 
-        try {
-            outputStream = openFileOutput(FileName, mode);
-            outputStream.write(content.getBytes());
-            outputStream.flush();
-            outputStream.close();
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
-    }
 }
